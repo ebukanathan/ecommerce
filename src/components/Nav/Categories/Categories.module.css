@@ -1,0 +1,33 @@
+.hero {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+  border-top: 1px solid hsl(0, 1%, 32%);
+  padding: 10px;
+}
+.sidebar {
+  width: 217px;
+  height: 344px;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.sidebar__item:hover {
+  border-bottom: 2px solid hsl(0, 0%, 20%);
+  padding-left: 2px;
+  cursor: pointer;
+}
+.hero__image {
+  width: 892px;
+  height: 344px;
+  background-color: red;
+}
+
+.cat__img {
+  width: 892px;
+  height: 344px;
+  object-fit: cover;
+}

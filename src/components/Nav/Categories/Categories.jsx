@@ -1,23 +1,24 @@
 import React from "react";
-// import heroImage from ".../assets/hero.avif";
+
+import style from "./Categories.module.css";
+import heroImage from "../../../assets/shoppers.webp";
 
 function Categories() {
   return (
-    <div>
-      <div className="sidebar">
-        <ul>
-          <li>Women&#39s Fashion</li>
-          <li>Men&#39s Fashion</li>
-          <li>Electronics</li>
-          <li>Home and Lifestyle</li>
-          <li>Sports and Outdoor</li>
-          <li>Babys and toys</li>
-          <li>Groceries</li>
-          <li>Health and Beauty</li>
-        </ul>
-      </div>
+    <div className={style.hero}>
+      <ul className={style.sidebar}>
+        <li className={style.sidebar__item}>Women&#39s Fashion</li>
+        <li className={style.sidebar__item}>Men&#39s Fashion</li>
+        <li className={style.sidebar__item}>Electronics</li>
+        <li className={style.sidebar__item}>Home and Lifestyle</li>
+        <li className={style.sidebar__item}>Sports and Outdoor</li>
+        <li className={style.sidebar__item}>Babys and toys</li>
+        <li className={style.sidebar__item}>Groceries</li>
+        <li className={style.sidebar__item}>Health and Beauty</li>
+      </ul>
+
       <div className="hero__image">
-        <img src="" alt="" />
+        <img className={style.cat__img} src={heroImage} alt="" />
       </div>
     </div>
   );

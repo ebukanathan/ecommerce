@@ -1,5 +1,7 @@
 import React from "react";
 import style from "./Nav.module.css";
+import { FaShoppingCart } from "react-icons/fa";
+import { CiHeart } from "react-icons/ci";
 
 function Nav() {
   return (
@@ -38,8 +40,8 @@ function Nav() {
           className="search-input"
           placeholder="what are you looking for"
         />
-        <h3>wishlist</h3>
-        <h3>cart</h3>
+        <CiHeart />
+        <FaShoppingCart />
       </div>
     </div>
     // </div>
