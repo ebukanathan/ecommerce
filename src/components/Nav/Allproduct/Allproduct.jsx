@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import style from "./Allproduct.module.css";
 import Productcard from "../Productcard/Productcard";
+import Cartcard from "../Cartcard/Cartcard";
 
 function Allproduct() {
   const [allproduct, setAllproduct] = useState([]);
@@ -20,8 +21,13 @@ function Allproduct() {
 
   const handleAddtocart = (item) => {
     // e.preventDefault(),
-    setCart((s) => [...s, item]);
+    cart.includes(item) ? "" : setCart((s) => [...s, item]);
     console.log(cart);
+  };
+
+  const handleDelete = (id) => {
+    setCart(cart.filter((c) => c.id !== id));
+    // console.log(n);
   };
 
   return (
@@ -38,6 +44,16 @@ function Allproduct() {
           />
         ))}
       </div>
+
+      {cart.map((c) => (
+        <Cartcard
+          key={c.id}
+          img={c.image}
+          title={c.title}
+          price={c.price}
+          handleDelete={() => handleDelete(c.id)}
+        />
+      ))}
     </div>
   );
 }
