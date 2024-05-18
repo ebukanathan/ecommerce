@@ -27,24 +27,29 @@ function CartPage() {
         )}
       </div>
       <div className={style.cart__total}>
-        <h4>Total :</h4>
-        {cart.length > 0 ? <div className={style.fig}>${total}</div> : ""}
-      </div>
-      <div>
         {cart.length > 0 ? (
-          <button className={style.checkout}>Proceed to checkout</button>
+          <div className={style.fig}>Total : ${total}</div>
         ) : (
           ""
         )}
       </div>
-      <div>
-        {cart.length > 0 ? (
-          <button className={style.clear__cart} onClick={() => setCart([])}>
-            Clear Cart
-          </button>
-        ) : (
-          ""
-        )}
+      <div className={style.cart__actions}>
+        <div>
+          {cart.length > 0 ? (
+            <button className={style.checkout}>Proceed to checkout</button>
+          ) : (
+            ""
+          )}
+        </div>
+        <div>
+          {cart.length > 0 ? (
+            <button className={style.clear__cart} onClick={() => setCart([])}>
+              Clear Cart
+            </button>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

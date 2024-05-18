@@ -22,10 +22,34 @@
 .checkout,
 .clear__cart {
   padding: 15px 40px;
-  background-color: red;
+
   color: white;
   border: none;
   border-radius: 5px;
   font-weight: 400;
   margin-bottom: 10px;
+}
+
+.checkout {
+  background-color: hsl(0, 56%, 60%);
+}
+
+.checkout:hover {
+  background-color: hsl(0, 56%, 40%);
+  transition: all 0.5s ease-in-out;
+}
+
+.clear__cart {
+  background-color: hsl(0, 0%, 60%);
+}
+.clear__cart:hover {
+  background-color: hsl(0, 0%, 10%);
+  transition: all 0.5s ease-in-out;
+}
+
+.cart__actions {
+  width: 40%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-around;
 }
