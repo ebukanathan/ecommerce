@@ -43,7 +43,9 @@ function Nav() {
           className="search-input"
           placeholder="what are you looking for"
         />
-        <CiHeart />
+        <div className={style.heart}>
+          <CiHeart />
+        </div>
         <div className={style.cart}>
           <FaShoppingCart />
 

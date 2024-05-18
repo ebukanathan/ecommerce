@@ -63,9 +63,19 @@ input:focus {
   outline-color: hsl(0, 83%, 2%);
 }
 
-.cart {
+.cart,
+.heart {
   position: relative;
   width: 25px;
+  transition: all 0.3s ease;
+}
+
+.cart:hover {
+  transform: scaleX(1.2);
+}
+
+.heart:hover {
+  transform: scaleX(1.2);
 }
 
 .cart__count {
