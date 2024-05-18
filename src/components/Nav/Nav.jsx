@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./Nav.module.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
+import { Cartcontext } from "../../assets/Context/Cartcontext";
 
 function Nav() {
+  const { cart } = useContext(Cartcontext);
+
   return (
     <div className={style.container}>
       <div className={style.nav__left}>
@@ -41,7 +44,11 @@ function Nav() {
           placeholder="what are you looking for"
         />
         <CiHeart />
-        <FaShoppingCart />
+        <div className={style.cart}>
+          <FaShoppingCart />
+
+          <div className={style.cart__count}>{cart.length}</div>
+        </div>
       </div>
     </div>
     // </div>

@@ -63,5 +63,24 @@ input:focus {
   outline-color: hsl(0, 83%, 2%);
 }
 
+.cart {
+  position: relative;
+  width: 25px;
+}
+
+.cart__count {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  color: white;
+  background-color: red;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  padding: 0.5px;
+  font-size: 0.8rem;
+}
+
 @media screen(max-width:750px) {
 }
