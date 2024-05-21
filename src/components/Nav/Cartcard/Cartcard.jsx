@@ -12,7 +12,7 @@ function Cartcard({ img, title, price, handleDelete }) {
         <input type="number" className={style.quantity} min={1} />
         <div className={style.subtotal}>{price}</div>
         <button className={style.delete} onClick={handleDelete}>
-          delete
+          Remove
         </button>
       </div>
     </div>

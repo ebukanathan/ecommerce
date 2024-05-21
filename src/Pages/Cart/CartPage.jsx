@@ -3,10 +3,10 @@ import React, { useContext } from "react";
 import style from "./CartPage.module.css";
 import Cartcard from "../../components/Nav/Cartcard/Cartcard";
 import { Cartcontext } from "../../assets/Context/Cartcontext";
-import { RiH3 } from "react-icons/ri";
+import { NavLink } from "react-router-dom";
 
 function CartPage() {
-  const { cart, handleDelete, total, setCart } = useContext(Cartcontext);
+  const { cart, handleDelete, total } = useContext(Cartcontext);
 
   return (
     <div>
@@ -42,13 +42,20 @@ function CartPage() {
           )}
         </div>
         <div>
-          {cart.length > 0 ? (
+          {/* {cart.length > 0 ? (
             <button className={style.clear__cart} onClick={() => setCart([])}>
               Clear Cart
             </button>
           ) : (
             ""
-          )}
+          )} */}
+          <NavLink to={"/"}>
+            {cart.length > 0 ? (
+              <button className={style.clear__cart}>Continue Shopping</button>
+            ) : (
+              ""
+            )}
+          </NavLink>
         </div>
       </div>
     </div>

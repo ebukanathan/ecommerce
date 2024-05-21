@@ -3,6 +3,7 @@ import style from "./Nav.module.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import { Cartcontext } from "../../assets/Context/Cartcontext";
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   const { cart } = useContext(Cartcontext);
@@ -12,14 +13,16 @@ function Nav() {
       <div className={style.nav__left}>
         {/* logo */}
         <div className={style.logo}>
-          <h2>Exclusive</h2>
+          <NavLink to={"/"}>
+            <h2>Exclusive</h2>
+          </NavLink>
         </div>
 
         {/* Nav menu */}
         <div>
           <ul className={style.nav__menu}>
             <li className={style.nav__item}>
-              <a href="">Home</a>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li className={style.nav__item}>
               <a href="">Contact</a>
@@ -47,9 +50,11 @@ function Nav() {
           <CiHeart />
         </div>
         <div className={style.cart}>
-          <FaShoppingCart />
+          <NavLink to={"/cart"}>
+            <FaShoppingCart />
 
-          <div className={style.cart__count}>{cart.length}</div>
+            <div className={style.cart__count}>{cart.length}</div>
+          </NavLink>
         </div>
       </div>
     </div>

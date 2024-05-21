@@ -2,12 +2,15 @@ import React from "react";
 
 import style from "./Categories.module.css";
 import heroImage from "../../../assets/shoppers.webp";
+import { NavLink } from "react-router-dom";
 
 function Categories() {
   return (
     <div className={style.hero}>
       <ul className={style.sidebar}>
-        <li className={style.sidebar__item}>Women&#39s Fashion</li>
+        <li className={style.sidebar__item}>
+          <NavLink to="/search/jewelry">Jewelry</NavLink>
+        </li>
         <li className={style.sidebar__item}>Men&#39s Fashion</li>
         <li className={style.sidebar__item}>Electronics</li>
         <li className={style.sidebar__item}>Home and Lifestyle</li>
