@@ -9,20 +9,18 @@ function Context({ children }) {
   const handleDelete = (id) => {
     setCart(cart.filter((c) => c.id !== id));
   };
-  // useEffect(() => {
-  //   cart.map((c) => setPrices([...prices, c.price]));
-  // }, []);
 
-  // const handleSum = () => {
-  //   setPrices(cart.map((c) => [...prices, c.price]));
-  //   console.log(prices);
-  // };
+  const handleAddtocart = (item) => {
+    cart.includes(item) ? "" : setCart((s) => [...s, item]);
+  };
 
   const total = cart.reduce((acc, item) => {
     return (acc += Number(item.price));
   }, 0);
   return (
-    <Cartcontext.Provider value={{ cart, setCart, handleDelete, total }}>
+    <Cartcontext.Provider
+      value={{ cart, setCart, handleDelete, total, handleAddtocart }}
+    >
       {children}
     </Cartcontext.Provider>
   );

@@ -7,7 +7,7 @@ import { Cartcontext } from "../../../assets/Context/Cartcontext";
 function Allproduct() {
   const [allproduct, setAllproduct] = useState([]);
 
-  const { cart, setCart } = useContext(Cartcontext);
+  const { cart, setCart, handleAddtocart } = useContext(Cartcontext);
 
   const GetAllproduct = async () => {
     const api = await fetch("https://fakestoreapi.com/products");
@@ -23,10 +23,10 @@ function Allproduct() {
 
   console.log(allproduct);
 
-  const handleAddtocart = (item) => {
-    cart.includes(item) ? "" : setCart((s) => [...s, item]);
-    console.log(cart);
-  };
+  // const handleAddtocart = (item) => {
+  //   cart.includes(item) ? "" : setCart((s) => [...s, item]);
+  //   console.log(cart);
+  // };
 
   return (
     <div className={style.container}>

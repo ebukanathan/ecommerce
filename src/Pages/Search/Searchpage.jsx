@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Productcard from "../../components/Nav/Productcard/Productcard";
 import style from "./Searchpage.module.css";
-
 import { useParams } from "react-router-dom";
+import { Cartcontext } from "../../assets/Context/Cartcontext";
 
 function Searchpage() {
   const [search, setSearch] = useState([]);
+
+  const { handleAddtocart } = useContext(Cartcontext);
 
   const params = useParams();
 
@@ -29,7 +31,7 @@ function Searchpage() {
           picture={item.image}
           title={item.title}
           newPrice={item.price}
-          //   handleAddtocart={() => handleAddtocart(item)}
+          handleAddtocart={() => handleAddtocart(item)}
         />
       ))}
     </div>

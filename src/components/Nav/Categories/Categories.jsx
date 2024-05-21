@@ -9,7 +9,7 @@ function Categories() {
     <div className={style.hero}>
       <ul className={style.sidebar}>
         <li className={style.sidebar__item}>
-          <NavLink to="/search/jewelry">Jewelry</NavLink>
+          <NavLink to="/search/jewelery">Jewelry</NavLink>
         </li>
         <li className={style.sidebar__item}>
           <NavLink to="/search/men's clothing">Men Fashion</NavLink>
