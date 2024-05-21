@@ -21,6 +21,8 @@ function Allproduct() {
     GetAllproduct();
   }, []);
 
+  console.log(allproduct);
+
   const handleAddtocart = (item) => {
     cart.includes(item) ? "" : setCart((s) => [...s, item]);
     console.log(cart);

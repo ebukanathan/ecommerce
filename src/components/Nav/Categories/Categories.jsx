@@ -11,9 +11,15 @@ function Categories() {
         <li className={style.sidebar__item}>
           <NavLink to="/search/jewelry">Jewelry</NavLink>
         </li>
-        <li className={style.sidebar__item}>Men&#39s Fashion</li>
-        <li className={style.sidebar__item}>Electronics</li>
-        <li className={style.sidebar__item}>Home and Lifestyle</li>
+        <li className={style.sidebar__item}>
+          <NavLink to="/search/men's clothing">Men Fashion</NavLink>
+        </li>
+        <li className={style.sidebar__item}>
+          <NavLink to="/search/women's clothing">Women Fashion</NavLink>
+        </li>
+        <li className={style.sidebar__item}>
+          <NavLink to="/search/electronics">ELectronics</NavLink>
+        </li>
         <li className={style.sidebar__item}>Sports and Outdoor</li>
         <li className={style.sidebar__item}>Babys and toys</li>
         <li className={style.sidebar__item}>Groceries</li>

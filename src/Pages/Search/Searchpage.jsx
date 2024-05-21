@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import Productcard from "../../components/Nav/Productcard/Productcard";
 import style from "./Searchpage.module.css";
 
+import { useParams } from "react-router-dom";
+
 function Searchpage() {
   const [search, setSearch] = useState([]);
 
-  const getSearch = async () => {
+  const params = useParams();
+
+  const getSearch = async (name) => {
     const api = await fetch(
-      "https://fakestoreapi.com/products/category/jewelery"
+      `https://fakestoreapi.com/products/category/${name}`
     );
     const data = await api.json();
     setSearch(data);
@@ -15,7 +19,7 @@ function Searchpage() {
   };
 
   useEffect(() => {
-    getSearch();
+    getSearch(params.type);
   }, []);
   return (
     <div className={style.allsearchgrid}>
