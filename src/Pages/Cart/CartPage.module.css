@@ -53,3 +53,21 @@
   display: flex;
   justify-content: space-around;
 }
+
+@media only screen and (max-width: 700px) {
+  .cart__actions {
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .cart__total {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
