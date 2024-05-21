@@ -36,19 +36,12 @@ function CartPage() {
       <div className={style.cart__actions}>
         <div>
           {cart.length > 0 ? (
-            <button className={style.checkout}>Proceed to checkout</button>
+            <button className={style.checkout}>Proceed to payment</button>
           ) : (
             ""
           )}
         </div>
         <div>
-          {/* {cart.length > 0 ? (
-            <button className={style.clear__cart} onClick={() => setCart([])}>
-              Clear Cart
-            </button>
-          ) : (
-            ""
-          )} */}
           <NavLink to={"/"}>
             {cart.length > 0 ? (
               <button className={style.clear__cart}>Continue Shopping</button>
