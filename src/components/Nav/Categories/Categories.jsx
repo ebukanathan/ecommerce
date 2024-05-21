@@ -20,10 +20,6 @@ function Categories() {
         <li className={style.sidebar__item}>
           <NavLink to="/search/electronics">ELectronics</NavLink>
         </li>
-        <li className={style.sidebar__item}>Sports and Outdoor</li>
-        <li className={style.sidebar__item}>Babys and toys</li>
-        <li className={style.sidebar__item}>Groceries</li>
-        <li className={style.sidebar__item}>Health and Beauty</li>
       </ul>
 
       <div className="hero__image">

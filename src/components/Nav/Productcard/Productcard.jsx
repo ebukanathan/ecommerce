@@ -29,6 +29,9 @@ function Productcard({ picture, title, newPrice, handleAddtocart }) {
             {/* <div className={style.old__price}>{oldPrice}</div> */}
           </div>
           {/* <div className={style.reviews}>{rating}</div> */}
+          <button className={style.mobile__button} onClick={handleAddtocart}>
+            Add to cart
+          </button>
         </div>
       </div>
     </>

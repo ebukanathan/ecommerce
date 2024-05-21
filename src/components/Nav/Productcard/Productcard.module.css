@@ -1,6 +1,6 @@
 .card__container {
   /* margin-top: 3rem; */
-  width: 250px;
+  width: 200px;
   background-color: #a56f6f;
   height: 250px;
   border-radius: 5px;
@@ -87,4 +87,14 @@ img {
 }
 .old__price {
   text-decoration: line-through;
+}
+
+.mobile__button {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .mobile__button {
+    display: block;
+  }
 }
