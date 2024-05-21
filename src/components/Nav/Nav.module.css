@@ -92,5 +92,8 @@ input:focus {
   font-size: 0.8rem;
 }
 
-@media screen(max-width:750px) {
+@media screen and (max-width: 700px) {
+  .nav__menu {
+    display: none;
+  }
 }

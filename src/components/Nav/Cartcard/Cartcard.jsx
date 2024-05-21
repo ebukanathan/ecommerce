@@ -1,4 +1,3 @@
-import React from "react";
 import style from "./Cartcard.module.css";
 
 function Cartcard({ img, title, price, handleDelete }) {

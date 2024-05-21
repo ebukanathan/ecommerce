@@ -31,3 +31,23 @@
   height: 344px;
   object-fit: cover;
 }
+
+@media only screen and (max-width: 700px) {
+  .hero {
+  }
+  .sidebar {
+    display: none;
+  }
+
+  .hero__image {
+    width: 500px;
+    height: 200px;
+    background-color: red;
+  }
+
+  .cat__img {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
