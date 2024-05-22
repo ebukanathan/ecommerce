@@ -23,7 +23,10 @@ function Productcard({ picture, title, newPrice, handleAddtocart }) {
           </div>
         </div>
         <div className={style.details}>
-          <h6 className={style.productname}>{title}</h6>
+          <h6 className={style.productname}>
+            {/* {title.substring(0, 40) + "..."} */}
+            {title.length > 40 ? title.substring(0, 40) + "..." : title}
+          </h6>
           <div className={style.price}>
             <div className={style.new__price}>${newPrice}</div>
             {/* <div className={style.old__price}>{oldPrice}</div> */}
