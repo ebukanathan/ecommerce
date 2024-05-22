@@ -8,6 +8,8 @@ import { NavLink } from "react-router-dom";
 function CartPage() {
   const { cart, handleDelete, total } = useContext(Cartcontext);
 
+  console.log(cart);
+
   return (
     <div>
       <h4 className="">Cart</h4>

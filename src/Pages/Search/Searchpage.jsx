@@ -17,7 +17,7 @@ function Searchpage() {
     );
     const data = await api.json();
     setSearch(data);
-    console.log(search);
+    // console.log(search);
   };
 
   useEffect(() => {

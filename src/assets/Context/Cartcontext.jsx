@@ -11,7 +11,8 @@ function Context({ children }) {
   };
 
   const handleAddtocart = (item) => {
-    cart.includes(item) ? "" : setCart((s) => [...s, item]);
+    let cartId = cart.map((c) => c.id);
+    cartId.includes(item.id) ? "" : setCart((s) => [...s, item]);
   };
 
   const total = cart.reduce((acc, item) => {
