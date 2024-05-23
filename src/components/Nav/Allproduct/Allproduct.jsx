@@ -7,7 +7,7 @@ import { Cartcontext } from "../../../assets/Context/Cartcontext";
 function Allproduct() {
   const [allproduct, setAllproduct] = useState([]);
 
-  const { cart, handleAddtocart } = useContext(Cartcontext);
+  const { cart, handleAddtocart, handleQty } = useContext(Cartcontext);
 
   const GetAllproduct = async () => {
     const api = await fetch("https://fakestoreapi.com/products");

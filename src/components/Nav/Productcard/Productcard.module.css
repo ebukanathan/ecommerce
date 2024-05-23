@@ -4,11 +4,11 @@
   background-color: #a56f6f;
   height: 250px;
   border-radius: 5px;
-  border: 1px solid black;
   margin-bottom: 10px;
 
   display: flex;
   flex-direction: column;
+  box-shadow: 2px 2px 5px rgba(34, 35, 34, 0.333);
 }
 
 .image__holder {

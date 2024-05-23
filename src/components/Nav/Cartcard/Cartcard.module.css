@@ -17,6 +17,12 @@
 
 .quantity {
   width: 2.5rem;
+  display: flex;
+}
+
+.quantity button {
+  border-radius: 0px;
+  outline: none;
 }
 
 .description {
@@ -26,6 +32,10 @@
   align-items: center;
   justify-content: space-around;
   gap: 5px;
+}
+
+.qty::before {
+  content: "X  ";
 }
 @media only screen and (max-width: 700px) {
   .container {
