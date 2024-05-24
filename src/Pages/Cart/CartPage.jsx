@@ -6,9 +6,7 @@ import { Cartcontext } from "../../assets/Context/Cartcontext";
 import { NavLink } from "react-router-dom";
 
 function CartPage() {
-  const { cart, handleDelete, total } = useContext(Cartcontext);
-
-  console.log(cart);
+  const { cart, handleDelete, total, updateQty } = useContext(Cartcontext);
 
   return (
     <div>
@@ -24,6 +22,8 @@ function CartPage() {
               title={c.title}
               price={c.price}
               handleDelete={() => handleDelete(c.id)}
+              qty={c.quantity}
+              onChange={() => updateQty(c.id)}
             />
           ))
         )}

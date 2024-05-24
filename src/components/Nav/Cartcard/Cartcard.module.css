@@ -25,6 +25,10 @@
   outline: none;
 }
 
+.quantity input {
+  width: 3rem;
+}
+
 .description {
   width: 40%;
   height: inherit;

@@ -11,8 +11,18 @@ function Context({ children }) {
     setCart(cart.filter((c) => c.id !== id));
   };
 
-  const handleQty = (e) => {
-    setQuantity(e.target.value);
+  // const handleQty = (e, id) => {
+  //   e.preventDefault();
+  //   cart.map((c) => (c.id == id ? setQuantity(e.target.value) : quantity));
+  // };
+
+  const updateQty = (id) => {
+    // e.preventDefault();
+    // const updt = { ...item, quantity: e.target.value };
+    // console.log();
+    // cart.map((c) => (c.id === item.id ? setCart((s) => [...s, updt]) : c));
+    const updt = cart.filter((c) => c.id == id);
+    console.log(updt);
   };
 
   const handleAddtocart = (item) => {
@@ -34,9 +44,10 @@ function Context({ children }) {
         handleDelete,
         total,
         handleAddtocart,
-        handleQty,
+
         quantity,
         setQuantity,
+        updateQty,
       }}
     >
       {children}
