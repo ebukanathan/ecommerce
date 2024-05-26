@@ -6,13 +6,16 @@ import { Cartcontext } from "../../../assets/Context/Cartcontext";
 
 function Allproduct() {
   const [allproduct, setAllproduct] = useState([]);
+  const [isloading, setIsloading] = useState(true);
 
-  const { cart, handleAddtocart, handleQty } = useContext(Cartcontext);
+  const { cart, handleAddtocart } = useContext(Cartcontext);
 
   const GetAllproduct = async () => {
     const api = await fetch("https://fakestoreapi.com/products");
     const data = await api.json();
-    console.log(data.length);
+    if (data) {
+      setIsloading(false);
+    }
     setAllproduct(data);
     // console.log(allproduct);
   };
@@ -27,16 +30,27 @@ function Allproduct() {
     <div className={style.container}>
       <h2>All Product</h2>
       <div className={style.allproductgrid}>
-        {allproduct.map((item) => (
-          <Productcard
-            key={item.id}
-            picture={item.image}
-            title={item.title}
-            newPrice={item.price}
-            handleAddtocart={() => handleAddtocart(item)}
-          />
-        ))}
+        {isloading && <Loading />}
+        {!isloading &&
+          allproduct.map((item) => (
+            <Productcard
+              key={item.id}
+              picture={item.image}
+              title={item.title}
+              newPrice={item.price}
+              handleAddtocart={() => handleAddtocart(item)}
+              qty={item.quantity}
+            />
+          ))}
       </div>
+    </div>
+  );
+}
+
+export function Loading() {
+  return (
+    <div className="">
+      <h3 className="">Loading...</h3>
     </div>
   );
 }

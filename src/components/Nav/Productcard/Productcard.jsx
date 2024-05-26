@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import style from "./Productcard.module.css";
 import { IoEyeSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
+import { Cartcontext } from "../../../assets/Context/Cartcontext";
 // import trouser from "../../../assets/trouser.webp";
 
-function Productcard({ picture, title, newPrice, handleAddtocart }) {
+function Productcard({ picture, title, newPrice, handleAddtocart, qty }) {
+  const { quantity, setQuantity } = useContext(Cartcontext);
+  // const [count,setCount] = useState()
+
+  const handleUpdate = (e) => {
+    setQuantity(e.target.value);
+  };
+
+  // const decrement = (e) => {
+  //   e.preventDefault();
+  //   setCount((c) => c - 1);
+  // };
   return (
     <>
       <div className={style.card__container}>
@@ -30,12 +42,23 @@ function Productcard({ picture, title, newPrice, handleAddtocart }) {
           <div className={style.price}>
             <div className={style.new__price}>${newPrice}</div>
             {/* <div className={style.old__price}>{oldPrice}</div> */}
-          </div>
-          {/* <div className={style.reviews}>{rating}</div> */}
+            {/* <input type="number" value={qty} onChange={handleUpdate} /> */}
+            {/* <div className={style.count}>
+              <button className="" onClick={() => setQuantity((c) => c - 1)}>
+                -
+              </button>
+              <div className="">{quantity}</div>
+              <button className="" onClick={() => setQuantity((c) => c + 1)}>
+                +
+              </button>
+            </div>
+          </div> */}
+            {/* <div className={style.reviews}>{rating}</div> */}
 
-          <button className={style.mobile__button} onClick={handleAddtocart}>
-            Add to cart
-          </button>
+            <button className={style.mobile__button} onClick={handleAddtocart}>
+              Add to cart
+            </button>
+          </div>
         </div>
       </div>
     </>
