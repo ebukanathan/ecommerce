@@ -42,23 +42,10 @@ function Productcard({ picture, title, newPrice, handleAddtocart, qty }) {
           <div className={style.price}>
             <div className={style.new__price}>${newPrice}</div>
             {/* <div className={style.old__price}>{oldPrice}</div> */}
-            {/* <input type="number" value={qty} onChange={handleUpdate} /> */}
-            {/* <div className={style.count}>
-              <button className="" onClick={() => setQuantity((c) => c - 1)}>
-                -
-              </button>
-              <div className="">{quantity}</div>
-              <button className="" onClick={() => setQuantity((c) => c + 1)}>
-                +
-              </button>
-            </div>
-          </div> */}
-            {/* <div className={style.reviews}>{rating}</div> */}
-
-            <button className={style.mobile__button} onClick={handleAddtocart}>
-              Add to cart
-            </button>
           </div>
+          <button className={style.mobile__button} onClick={handleAddtocart}>
+            Add to cart
+          </button>
         </div>
       </div>
     </>

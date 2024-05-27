@@ -4,34 +4,32 @@ export const Cartcontext = createContext();
 
 function Context({ children }) {
   const [cart, setCart] = useState([]);
-  // const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(1);
   //const [prices, setPrices] = useState([]);
-  const [itemqty, setItemqty] = useState(1);
+  // const [itemqty, setItemqty] = useState(2);
 
   const handleDelete = (id) => {
     setCart(cart.filter((c) => c.id !== id));
   };
 
-  // const [count, setCount] = useState(1);
+  const updateQty = (id, value) => {
+    //single out the require item
+    cart.map((c) => {
+      if (c.id == id) {
+        console.log(`quantity is ${c.quantity + value} `);
+      }
+    });
+  };
 
-  // const handleQty = (e, id) => {
-  //   e.preventDefault();
-  //   cart.map((c) => (c.id == id ? setQuantity(e.target.value) : quantity));
-  // };
-
-  // const updateQty = (id) => {
-  // single out the require item
-
-  //   const updt = cart.filter((c) => c.id == id);
-  //   const updatedItem = { ...updt, quantity: 4 };
-  //   setCart((s) => [...s, updatedItem]);
-  //   console.log(cart);
-  // };
+  // const updt = cart.filter((c) => c.id == id);
+  // const updatedItem = { ...updt, quantity:  };
+  // setCart((s) => [...s, updatedItem]);
+  // console.log(cart);
 
   const handleAddtocart = (item) => {
     let cartId = cart.map((c) => c.id);
-
-    const quantityItem = { ...item, quantity: itemqty };
+    //console.log(itemqty);
+    const quantityItem = { ...item, quantity: 1 };
     console.log(quantityItem);
 
     cartId.includes(item.id) ? "" : setCart((s) => [...s, quantityItem]);
@@ -48,12 +46,9 @@ function Context({ children }) {
         handleDelete,
         total,
         handleAddtocart,
-        // updateQty,
-
-        // quantity,
-        // setQuantity,
-        itemqty,
-        setItemqty,
+        updateQty,
+        quantity,
+        setQuantity,
       }}
     >
       {children}
