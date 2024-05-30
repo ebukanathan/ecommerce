@@ -6,24 +6,16 @@ import { Cartcontext } from "../../assets/Context/Cartcontext";
 import { NavLink } from "react-router-dom";
 
 function CartPage() {
-  const { cart, handleDelete, total, updateQty, setQuantity, quantity } =
-    useContext(Cartcontext);
+  const { cart, handleDelete, total, updateQty } = useContext(Cartcontext);
 
   const handleIncrement = (id, value) => {
     cart.map((item) => {
       if (item.id == id) {
-        setQuantity((s) => s + 1);
         console.log({ ...item, quantity: item.quantity + value });
       } else {
         return { item };
       }
     });
-    // if (item.id === id) {
-    //   console.log({ ...item, quantity: item.quantity + 1 });
-    //   // return { ...item, quantity: item.quantity + 1 };
-    // } else {
-    //   return item;
-    // }
   };
 
   const handleDecrement = (id) => {

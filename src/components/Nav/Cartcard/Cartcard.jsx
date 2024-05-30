@@ -10,7 +10,6 @@ function Cartcard({
   quantity,
   handleDelete,
   handleDecrement,
-  handleIncrement,
 }) {
   const { cart } = useContext(Cartcontext);
   // const [count, setCount] = useState(0);
@@ -36,7 +35,7 @@ function Cartcard({
           className={style.quantity}
           onChange={onChange}
         /> */}
-        <button className="" onClick={handleDecrement}>
+        <button className="" onClick={() => handleDecrement()}>
           -
         </button>
         <p className="">{quantity}</p>

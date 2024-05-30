@@ -5,8 +5,6 @@ export const Cartcontext = createContext();
 function Context({ children }) {
   const [cart, setCart] = useState([]);
   const [quantity, setQuantity] = useState(1);
-  //const [prices, setPrices] = useState([]);
-  // const [itemqty, setItemqty] = useState(2);
 
   const handleDelete = (id) => {
     setCart(cart.filter((c) => c.id !== id));
@@ -20,11 +18,6 @@ function Context({ children }) {
       }
     });
   };
-
-  // const updt = cart.filter((c) => c.id == id);
-  // const updatedItem = { ...updt, quantity:  };
-  // setCart((s) => [...s, updatedItem]);
-  // console.log(cart);
 
   const handleAddtocart = (item) => {
     let cartId = cart.map((c) => c.id);
@@ -47,8 +40,6 @@ function Context({ children }) {
         total,
         handleAddtocart,
         updateQty,
-        quantity,
-        setQuantity,
       }}
     >
       {children}
