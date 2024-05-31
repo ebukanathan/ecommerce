@@ -3,7 +3,7 @@ import Productcard from "../../components/Nav/Productcard/Productcard";
 import style from "./Searchpage.module.css";
 import { useParams } from "react-router-dom";
 import { Cartcontext } from "../../assets/Context/Cartcontext";
-
+import { Loading } from "../../components/Nav/Allproduct/Allproduct";
 function Searchpage() {
   const [search, setSearch] = useState([]);
 
@@ -25,6 +25,7 @@ function Searchpage() {
   }, []);
   return (
     <div className={style.allsearchgrid}>
+      {!search ? <Loading /> : ""}
       {search.map((item) => (
         <Productcard
           key={item.id}

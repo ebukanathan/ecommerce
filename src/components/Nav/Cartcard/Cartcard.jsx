@@ -10,15 +10,9 @@ function Cartcard({
   quantity,
   handleDelete,
   handleDecrement,
+  handleIncrement,
 }) {
   const { cart } = useContext(Cartcontext);
-  // const [count, setCount] = useState(0);
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setCart((s) => ([ ...s, quantity: e.target.value ]));
-  //   console.log(cart);
-  // };
 
   return (
     <div>
@@ -29,17 +23,11 @@ function Cartcard({
         </div>
         {/* <input type="number" className={style.quantity} min={1} value={value} /> */}
 
-        {/* <input
-          type="number"
-          value={quantity}
-          className={style.quantity}
-          onChange={onChange}
-        /> */}
         <button className="" onClick={() => handleDecrement()}>
           -
         </button>
         <p className="">{quantity}</p>
-        <button className="" onClick={handleIncrement}>
+        <button className="" onClick={() => handleIncrement()}>
           +
         </button>
 
