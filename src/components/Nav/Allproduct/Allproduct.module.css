@@ -22,3 +22,25 @@
     gap: 2rem;
   }
 }
+
+.loading {
+  width: 30px;
+  height: 30px;
+
+  border: 7px solid;
+  border-color: red black black black;
+  border-radius: 50%;
+  animation: rotate 1.5s linear infinite;
+}
+
+.loading__container {
+  height: 20vh;
+  display: grid;
+  place-items: center;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -31,17 +31,17 @@ function Allproduct() {
       <h2>All Product</h2>
       <div className={style.allproductgrid}>
         {isloading && <Loading />}
-        {!isloading &&
-          allproduct.map((item) => (
-            <Productcard
-              key={item.id}
-              picture={item.image}
-              title={item.title}
-              newPrice={item.price}
-              handleAddtocart={() => handleAddtocart(item)}
-              qty={item.quantity}
-            />
-          ))}
+        {/* <Loading /> */}
+        {allproduct.map((item) => (
+          <Productcard
+            key={item.id}
+            picture={item.image}
+            title={item.title}
+            newPrice={item.price}
+            handleAddtocart={() => handleAddtocart(item)}
+            qty={item.quantity}
+          />
+        ))}
       </div>
     </div>
   );
@@ -49,8 +49,8 @@ function Allproduct() {
 
 export function Loading() {
   return (
-    <div className="">
-      <h3 className="">Loading...</h3>
+    <div className={style.loading__container}>
+      <div className={style.loading}></div>
     </div>
   );
 }
