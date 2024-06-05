@@ -23,13 +23,13 @@ function Cartcard({
         </div>
         {/* <input type="number" className={style.quantity} min={1} value={value} /> */}
 
-        <button className="" onClick={() => handleDecrement()}>
+        {/* <button className="" onClick={() => handleDecrement()}>
           -
         </button>
         <p className="">{quantity}</p>
         <button className="" onClick={() => handleIncrement()}>
           +
-        </button>
+        </button> */}
 
         <div className={style.subtotal}>{price}</div>
         <h4 className={style.qty}>{quantity}</h4>
