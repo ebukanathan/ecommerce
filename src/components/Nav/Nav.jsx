@@ -53,7 +53,9 @@ function Nav() {
           <NavLink to={"/cart"}>
             <FaShoppingCart />
 
-            <div className={style.cart__count}>{cart.length}</div>
+            {cart.length > 0 && (
+              <div className={style.cart__count}>{cart.length}</div>
+            )}
           </NavLink>
         </div>
       </div>
