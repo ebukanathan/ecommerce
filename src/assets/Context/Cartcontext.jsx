@@ -19,26 +19,20 @@ function Context({ children }) {
     });
   };
 
-  const handleAddtocart = (item) => {
-    // let cartId = cart.map((c) => c.id);
-    // console.log(cartId);
-    // const quantityItem = { ...item, quantity: 1 };
-    // console.log(quantityItem);
-    // cartId.includes(item.id) ? "" : setCart((s) => [...s, quantityItem]);
-    const existing = cart.find((n) => n.id == item.id);
+  const handleAddtocart = (product) => {
+    setCart((prev) => {
+      const existing = prev.find((n) => n.id == product.id);
+      if (existing) {
+        return prev.map((n) =>
+          n.id === product.id ? { ...n, quantity: n.quantity + 1 } : n
+        );
+      }
 
-    if (existing) {
-      return cart.map((n) =>
-        n.id === item.id
-          ? setCart((prev) => [...prev, { ...item, quantity: quantity + 1 }])
-          : item
-      );
-    }
-
-    setCart((prev) => [...prev, { ...item, quantity: 1 }]);
-
-    console.log(cart);
+      return [...prev, { ...product, quantity: 1 }];
+    });
   };
+
+  console.log(cart);
 
   const total = cart.reduce((acc, item) => {
     return (acc += Number(item.price) * Number(item.quantity));
